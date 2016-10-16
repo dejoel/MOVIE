@@ -1,0 +1,33 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^music/(.+)/page/(.+).html$ music.php?q=$1&page=$2
+RewriteRule ^music/tags/(.+)/(.+).html$ music.php?genre=$1&page=$2
+RewriteRule ^music/tags/(.+).html$ music.php?genre=$1
+RewriteRule ^v/(.+)/(.+).html$ view.php?id=$1&permalink=$2
+RewriteRule ^music/(.+).html$ music.php?q=$1 [L]
+RewriteRule ^musik/(.+)/page/(.+).html$ music.php?q=$1&page=$2
+RewriteRule ^musik/tags/(.+)/(.+).html$ music.php?genre=$1&page=$2
+RewriteRule ^musik/tags/(.+).html$ music.php?genre=$1
+RewriteRule ^v/(.+)/(.+).html$ view.php?id=$1&permalink=$2
+RewriteRule ^unduhmp3/(.+).mp3$ dl.php?id=$1
+ 
+RewriteRule ^query/(.+)/page/(.+)$ sch.php?q=$1&page=$2
+RewriteRule ^page=(.+)$ video.php?page=$1
+RewriteRule ^view-video/(.+)/(.+).html$ view_yt.php?id=$1
+
+RewriteRule ^video/(.+).html$ sch.php?q=$1 [L] 
+RewriteRule ^music/(.+).html$ music.php?q=$1 [L]
+
+RewriteRule ^chart$ chart.php [L] 
+RewriteRule ^watch$ view_yt.php [L]
+RewriteRule ^streaming$ streaming.php [L]
+RewriteRule ^video$ video.php [L]
+RewriteRule ^music$ music.php [L]
+RewriteRule ^musik$ music.php [L]
+RewriteRule ^contact-us.html$ contact.php [L]
+
+Options -Indexes
+ErrorDocument 402 /index.php
+ErrorDocument 403 /index.php
+ErrorDocument 404 /index.php
+ErrorDocument 500 /index.php
